@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Posts</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Dec 2024 17:31:11 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why you should hide your sanity studio hostname</title>
+      <link>http://localhost:1313/why-you-should-hide-your-sanity-studio-hostname/</link>
+      <pubDate>Thu, 12 Dec 2024 17:31:11 +0000</pubDate>
+      
+      <guid>http://localhost:1313/why-you-should-hide-your-sanity-studio-hostname/</guid>
+      <description>How bad actors can gain access to your sanity config using a your studio hostname only.</description>
+      <content:encoded><![CDATA[<p>Sanity studio as a tool offers dynamic  configuration and editorial collaboration. But the magic of sanity means a lot of developers overlook some details in the documentation. Specifically <a href="https://www.sanity.io/docs/deployment#ed3cd78ea4eb">this little gotcha</a>.</p>
+<blockquote>
+<p>[!info] Gotcha
+The <code>sanity deploy</code> command works by building the source files in your studio project into static files, which are then uploaded and served from your chosen <code>sanity.studio</code> domain.
+Note that no authentication is involved when serving the built source files, so make sure not to include any sensitive data (schema files, package.json, config files, custom inputs, etc.) in your studio code.</p>
+</blockquote>
+<p>This is often overlooked, and all it takes is discovering a studio&rsquo;s hostname (e.g., <code>hostname.sanity.studio</code>). From there, you can easily access the full <code>schema</code>, <code>projectId</code> and <code>dataset</code>. Since many developers use the default public dataset (<code>production</code>), there’s often no restriction on querying the data.</p>
+<h4 id="trying-this-out-for-educational-purposes-only">Trying this out (For Educational Purposes Only)</h4>
+<ol>
+<li>
+<p>Find a Sanity Studio Hostname
+Look for companies or projects that use sanity. One place to look is GitHub, some public repositories have the sanity studio hostname hardcoded. You can search <a href="https://github.com/search?q=sanity.studio&amp;type=code">GitHub for &ldquo;sanity.studio&rdquo;</a> to find studios.  Or you can head to a tech stack website and search for companies using sanity in their stack. Try using the company name as the hostname (<code>companyname.sanity.studio</code>) or some other variation, most will yield no result but some will work.</p>
+</li>
+<li>
+<p>Inspect the Served Bundle for Config
+Navigate to the studio URL and under the sources tab in chrome, search through the served bundle for a <code>projectId</code> and <code>dataset</code>
+
+  <img loading="lazy" src="https://res.cloudinary.com/dpsyccfsa/image/upload/v1733545167/Sea%20Assets/h1a9szidfgxofr74tb3s.png" alt=""  /></p>
+</li>
+<li>
+<p>Start Querying
+Use the <code>projectId</code> and <code>dataset</code> to query data to your hearts content. A simple tool you can use run queries is <a href="https://sanityclient.vercel.app">sanity client</a>&ndash;a poor imitation of the sanity vision tool&ndash; to test out queries.</p>
+</li>
+</ol>
+<pre tabindex="0"><code class="language-image-layout-a" data-lang="image-layout-a">![](https://res.cloudinary.com/dpsyccfsa/image/upload/v1733588097/Sea%20Assets/paa4zkd6lsxeacikbjrv.png)
+![](https://res.cloudinary.com/dpsyccfsa/image/upload/v1733588098/Sea%20Assets/tggoj1wp8xyg0gei3spo.png)
+</code></pre><h3 id="before-publishing">Before publishing</h3>
+<ul>
+<li>Figure out hugo</li>
+<li>submit an issue on cord alerting them</li>
+<li>email skims and sakara</li>
+<li>Add a readme to the public repo</li>
+</ul>
+<p><a href="https://buymeacoffee.com/nehemia">Buy me coffee</a></p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>
