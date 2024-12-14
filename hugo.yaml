@@ -1,7 +1,38 @@
-baseURL: 'https://example.org/'
-languageCode: 'en-us'
-title: 'Posts'
+baseURL: "https://example.org/"
+languageCode: "en-us"
+title: "Posts"
 theme: "PaperModX"
+paginate: 8
 
-params:
-  disableThemeToggle: true
+menu:
+  main:
+    - name: "Author"
+      url: "https://nehemia.me"
+      params:
+        external: true
+
+Params:
+    disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    ShowToc: true
+    TocSide: 'right'
+    ShowCodeCopyButtons: true
+    ShowEditPost: true
+    editPost:
+        URL: "https://github.com/Heracraft/blog/content"
+        Text: "Suggest Changes"
+        appendFilePath: true
+    homeInfoparams:
+        title: "Karibu"
+        content: "Hey there, welcome to my blog, I hope you find what you are looking for."
+    socialIcons:
+        - name: "github-simple"
+          url: "https://github.com/Heracraft"
+    repository:
+        branch: 'master'
+        owner: 'heracraft'
+        repo: 'blog'
+        service: 'GitHub'
+        urlPatternEdit: 'https://github.com/%s/%s/edit/%s/%s'
+        urlPatternView: 'https://github.com/%s/%s/blob/%s/%s'

@@ -30,6 +30,10 @@ Use the `projectId` and `dataset` to query data to your hearts content. A simple
 
 ### Before publishing
 + Figure out hugo
+	+ nav
+	+ link to portfolio
+	+ footer and donate	
++ Find a sol 
 + submit an issue on cord alerting them
 + email skims and sakara
 + Add a readme to the public repo
