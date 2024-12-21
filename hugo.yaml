@@ -12,7 +12,8 @@ menu:
         external: true
 
 Params:
-    disableThemeToggle: true
+    # disableThemeToggle: true
+    defaultTheme: "dark"
     ShowShareButtons: true
     ShowReadingTime: true
     ShowToc: true
