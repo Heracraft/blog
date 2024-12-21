@@ -2,7 +2,7 @@
 title: Why you should hide your sanity studio hostname
 description: How anyone can gain access to most sanity project data through their studio hostname
 date: 2024-12-12T17:31:11+00:00
-draft: false
+draft: true
 ---
 Sanity Studio is a remarkable tool offering dynamic configuration and seamless editorial collaboration. But the magic of sanity means a lot of developers overlook some details in the documentation. Specifically [this little gotcha](https://www.sanity.io/docs/deployment#ed3cd78ea4eb) concerning sanity's hosted service. 
 
