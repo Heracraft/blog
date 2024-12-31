@@ -37,3 +37,4 @@ Params:
         service: 'GitHub'
         urlPatternEdit: 'https://github.com/%s/%s/edit/%s/%s'
         urlPatternView: 'https://github.com/%s/%s/blob/%s/%s'
+        
