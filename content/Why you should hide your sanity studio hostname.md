@@ -1,10 +1,10 @@
 ---
 title: Why you should hide your sanity studio hostname
-description: How anyone can gain access to most sanity project data through their studio hostname
+description: How anyone can gain read access to most production datasets through their studio hostname
 date: 2024-12-12T17:31:11+00:00
 draft: true
 ---
-Sanity Studio is a remarkable tool offering dynamic configuration and seamless editorial collaboration. But the magic of sanity means a lot of developers overlook some details in the documentation. Specifically [this little gotcha](https://www.sanity.io/docs/deployment#ed3cd78ea4eb) concerning sanity's hosted service. 
+Sanity Studio is a remarkable tool offering dynamic configuration and seamless editorial collaboration. But the magic of sanity means a lot of developers overlook some details in the documentation. Specifically [this little gotcha](https://www.sanity.io/docs/deployment#bd4e07db3e37) concerning sanity's hosted service. 
 
 > [!info] Gotcha 
 > The `sanity deploy` command works by building the source files in your studio project into static files, which are then uploaded and served from your chosen `sanity.studio` domain.
@@ -56,3 +56,11 @@ Do away with the convenience and self host sanity studio!!. Self hosting opens t
 3. Keep schema files out of your bundle
 
 So far, I haven't found a way to do this without breaking the production build. If you discover a solution, feel free to [edit this page on GitHub](https://github.com/heracraft/blog/edit/master/content/Why%20you%20should%20hide%20your%20sanity%20studio%20hostname.md). Interestingly, the documentation suggests this is possible: *"so make sure not to include any sensitive data (schema files, package.json, config files, custom inputs, etc.) in your studio code."*  Unless I am missing something or completely reading it wrong. 
+
+---
+### Update Dec 25, 2024
+Turns out even the network tab can be used.  As soon as the studio loads, the studio sends a fetch request to a subdomain (`projectId.api.sanity.io`) to check for the authentication status. There you have it, the `projectId`!. Now as long as your project uses a  public datasets and the names can be found (either through the bundle or guess work) then free read access granted. 
+
+![](https://res.cloudinary.com/dpsyccfsa/image/upload/v1735621799/Sea%20Assets/pbakh6zyupon5wa39a7s.png)
+
+**TL;DR:** Use their hosted service, but make sure your hostname is obscure. Alternatively, secure your schema files (dunno how), use private datasets, and hide your access token. Better yet, consider self-hosting your studio for full control.
